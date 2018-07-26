@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--用百度的静态资源库的cdn安装bootstrap环境-->
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 在bootstrap.min.js 之前引入 -->
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!--jquery.validate-->
+    <script type="text/javascript" src="js/code.js" ></script>
+    <script type="text/javascript" src="js/login.js" ></script>
+    <style type="text/css">
+        body{background: url(../imgs/4.png) no-repeat;background-size:cover;font-size: 16px;}
+        .form{background: rgba(255,255,255,0.2);width:300px;margin:100px auto;}
+        #login_form{display: block;}
+        #regist_form{display: none;}
+        .fa{display: inline-block;top: 27px;left: 6px;position: relative;color: #ccc;}
+        input[type="text"],input[type="password"]{padding-left:26px;}
+        .checkbox{padding-left:21px;}
+        #code {
+            font-style:italic;
+            font-weight:bold;
+            border:0;
+            letter-spacing:5px;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form row">
+        <form class="form-horizontal" id="login_form">
+            <div class="form-group" style="text-align: center">
+                <img src="../imgs/raw_1529567785.png" height="120px" width="120px" >
+            </div>
+            <div class="form-group" style="text-align: center;padding-bottom:25px;">
+                <h2>
+                    <b>GAB信息采集分析系统</b>
+                </h2>
+            </div>
+            <div class="form-group">
+                <label>用户名:</label>
+                <input type="text" class="form-control icon-user" name="name" maxlength="25"/>
+            </div>
+            <div class="form-group">
+                <label>密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+                <input type="password" class="form-control" name="password" minlength="5"/>
+            </div>
+            <div class="form-group">
+                <label>验证码:</label><p>
+                <div style="float: left">
+                    <input type="text" class="form-control" id="in_code"/>
+                </div>
+                <div style="text-align: left;float:left;font-size: 22px">
+                    <input type="button" id="code" onclick="createCode()"/>
+                </div>
+            </div>
+            <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="button" onclick="login()">登录</button>
+            </div>
+            <div class="form-group" style="text-align: center">
+                <a href="register.html" id="register_btn" class="">没有账号？点击注册>></a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

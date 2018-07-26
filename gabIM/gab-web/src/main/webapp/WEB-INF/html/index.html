@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- https://pro.modao.cc/app/yJ5PPWLhT0ejlOl3IvMu9lvXv6pPZOY#screen=sea53f7c231c33c2220a850
+    -->
+    <title>GAB信息采集分析系统</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="bootstrap/css/bootstrap-select.css" rel="stylesheet"/>
+    <!--<link href="css/bootstrap-treeview.css" rel="stylesheet"> -->
+    <style>
+      .list-group-item {
+        position: relative;
+        display: block;
+        padding: 15px 15px;
+        margin-bottom: -1px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        font-size: 14px;
+      }
+      .treeview span.icon {
+        width: 14px !important;
+        margin-right: 5px !important;
+      }
+      .alert{
+          position: absolute;
+          text-align:center;
+          top: 0px;
+          left: 50%;
+          margin-left: -11%;
+          width: 22%;
+          display: none;
+          opacity:0.8;
+          z-index: 10000;
+      }
+
+      /*.sidebar{*/
+          /*background: url("../imgs/sidebar-toggler.jpg") #307070 5px 5px no-repeat;*/
+      /*}*/
+
+      /*.sidebar_loading{
+          background: url("../imgs/loading.gif") #307070 10px 10px no-repeat;
+      }*/
+    </style>
+  </head>
+  <body style="width:100%;height:100%;">
+    <div style="width:100%;height:100%;position: relative;overflow: hidden;">
+      <!-- 页眉 -->
+      <div id="GAB_FRAME" style="width:100%;height:100%;position: relative;overflow: hidden;">
+      </div>
+      <div class="alert alert-warning">
+          <strong>提示　</strong><span id="win_tips"></span>
+      </div>
+  </div>
+
+  <div id="ycf-alert" class="modal">
+      <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">
+                      <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                  </button>
+                  <h5 class="modal-title">
+                      <i class="fa fa-exclamation-circle"></i> [Title]
+                  </h5>
+              </div>
+              <div class="modal-body small">
+                  <p>[Message]</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary ok"
+                          data-dismiss="modal">[BtnOk]</button>
+                  <button type="button" class="btn btn-default cancel"
+                          data-dismiss="modal">[BtnCancel]</button>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div id="modal-form" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div id="win_port" class="modal-dialog modal-sm" style="width:600px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close form-close-btn">×</button>
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+                    <h3 id="myModalLabel" contenteditable="false">标题栏</h3>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer" style="text-align: center;">
+                    <button class="btn form-close-btn" >取消</button>
+                    <button id="form-submit-btn" class="btn btn-primary" contenteditable="false">保存设置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script><!-- -->
+    <script src="bootstrap/js/bootstrap-select.js"></script>
+  	<script src="js/bootstrap-treeview.js"></script>
+  	<script src="frame/frame.js"></script>
+  	<script src="frame/header.js"></script>
+  	<script src="frame/viewPort.js"></script>
+  	<script src="frame/leftMenu.js"></script>
+    <script src="util/commonUtil.js"></script>
+    <script src="util/ajaxHelper.js"></script>
+    <script src="components/base_component.js"></script>
+    <script src="components/grid.js"></script>
+    <script src="components/form.js"></script>
+    <script src="components/searchAndManageBar.js"></script>
+    <script src="modules/account_manage.js"></script>
+    <script src="modules/role_manage.js"></script>
+    <script src="modules/info_fill_form.js"></script>
+  </body>
+</html>

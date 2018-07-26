@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="default" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <plugin type="cn.com.realer.core.generator.plugin.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="cn.com.realer.core.generator.plugin.MapperPlugin">
+        
+       		 <!-- 生成目标文件位置 -->
+            <property name="targetProject" value="../realer-service-impl/src/main/java"/>
+            <property name="targetPackage" value="cn.com.realer.dao.generator"/>
+			<!-- 生成扩展目标文件位置 -->
+            <property name="expandTargetPackage" value="cn.com.realer.dao.expand.f"/>
+            
+            <!-- 生成dao接口目标文件位置 -->
+            <property name="providerTargetProject" value="../realer-service/src/main/java"/>
+            <property name="providerTargetPackage" value="cn.com.realer.model.provider.f"/>
+            
+            <!-- 生成dao实现类目标文件位置 -->
+            <property name="providerImplTargetPackage" value="cn.com.realer.dao.provider.f"/>
+            <property name="providerSuperClass" value="cn.com.realer.core.support.provider.BaseProvider"/>
+            <property name="providerImplSuperClass" value="cn.com.realer.core.support.provider.BaseProviderImpl"/>
+        </plugin>
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+        
+        <jdbcConnection driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://localhost:5432/dome"
+                        userId="postgres" 
+                        password="root">
+        </jdbcConnection>
+        
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        
+        <!-- 生成pojo类的位置 -->
+        <javaModelGenerator targetPackage="cn.com.realer.pojo" targetProject="../realer-service/src/main/java">
+            <property name="constructorBased" value="false"/>
+            <property name="useActualColumnNames" value="true" />
+            <property name="enableSubPackages" value="false"/>
+            <property name="immutable" value="false"/>
+            <property name="trimStrings" value="true"/>
+            <property name="rootClass" value="cn.com.realer.core.generator.base.BaseModel"/>
+        </javaModelGenerator>
+        
+        <!-- mapper映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="mappers.generator.f" targetProject="../realer-service-impl/src/main/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        
+        <!-- mapper接口文件生成的位置 -->
+        <javaClientGenerator targetPackage="cn.com.realer.dao.generator.f" targetProject="../realer-service-impl/src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value=""/>
+            <property name="methodNameCalculator" value=""/>
+            <property name="rootInterface" value="cn.com.realer.core.generator.base.BaseMapper"/>
+        </javaClientGenerator>
+        
+        <table tableName="gab_f_message">
+            <generatedKey column="id" sqlStatement="JDBC" />
+        </table>
+    </context>
+</generatorConfiguration>
